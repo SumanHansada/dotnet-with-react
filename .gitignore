@@ -38,5 +38,5 @@ typings
 .node_repl_history
 
 # .NET compiled files
-server/bin
-server/obj
+bin
+obj

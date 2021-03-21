@@ -11,8 +11,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Microsoft.EntityFrameworkCore.Design;
+using DataAccess;
+using Microsoft.EntityFrameworkCore;
 
-namespace server
+namespace Server
 {
     public class Startup
     {
@@ -32,6 +35,13 @@ namespace server
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "server", Version = "v1" });
             });
+
+            var databaseType = Configuration["DatabaseType"];
+            if(databaseType == "MSSQLServer")
+                services.AddDbContext<AppDbContext, SQLServerDbContext>();
+            else
+                services.AddDbContext<AppDbContext, PostgresDbContext>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
