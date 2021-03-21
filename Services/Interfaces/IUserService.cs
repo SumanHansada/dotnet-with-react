@@ -2,9 +2,9 @@ using System;
 using Entities;
 using System.Collections.Generic;
 
-namespace server.Interfaces
+namespace Services.Interfaces
 {
-    interface IUserService
+    public interface IUserService
     {
         User Authenticate(string username, string password);
         IEnumerable<User> GetAll();

@@ -4,14 +4,16 @@ using DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace DataAccess.SqlServerMigrations
+namespace DataAccess.SQLServerMigrations
 {
     [DbContext(typeof(SQLServerDbContext))]
-    partial class SQLServerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210321090226_Modified_UserName_Column")]
+    partial class Modified_UserName_Column
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

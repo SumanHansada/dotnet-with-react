@@ -1,4 +1,4 @@
-namespace Server.Helpers
+namespace Helpers
 {
     public class AppSettings
     {
