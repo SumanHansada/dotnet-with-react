@@ -55,7 +55,8 @@ Navigate to https://localhost:5001/swagger to open Swagger UI.
 `dotnet tool install --global dotnet-ef`
 
 ##### To Add the Migrations (SQL Server and Postgres)
-Navigate to Server folder and run this command
+Navigate to Server folder and run this command.   
+
 `dotnet ef  migrations add InitialCreate --startup-project ../Server/ --project ../DataAccess/ --context SQLServerDbContext --output-dir SqlServerMigrations --json`
 
 `dotnet ef  migrations add InitialCreate --startup-project ../Server/ --project ../DataAccess/ --context PostgresDbContext --output-dir PostgresMigrations --json`
